@@ -76,7 +76,7 @@ function observerLast(entries,observer){
         let place = entry.target.dataset.show
         let numImg = entry.target.dataset.number
         let length = showImgs.length-1
-        if(entry.isIntersecting && (+place !== (length*TRANSLATEX))){
+        if(entry.isIntersecting && (+place !== (length*TRANSLATEX) && (+place !== 0))){
             setIconDisplay('L','none')
             setIconDisplay('R','block')
             inter = true
