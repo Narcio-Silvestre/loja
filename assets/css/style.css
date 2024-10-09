@@ -11,7 +11,6 @@
     display: grid;
     grid-template-columns: 0.75fr 3fr;
     grid-template-rows: 0.5fr 2fr 0.5fr;
-    column-gap: 1.5rem;
 }
 
 .nav{
@@ -109,31 +108,74 @@
 
 .categories{
     grid-area: 2/ 1/ 3/ -1 ;
-    transform: translateX(4%);
-    transition: transform 0.15s;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 0.5fr 2fr;
+    grid-template-columns: 0.25fr 2fr;
+    row-gap: 1.5rem;
+
 }
 
+
+.carrossel{
+}
 
 
 .show{
     position: relative;
-    height: 20rem;
+    height: 18rem;
     overflow:hidden;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+
+.show > i{
+    position: absolute;
+    font-size: 7rem;
+    color: #333333aa;
+    transition: color 0.5s, opacity 0.5s;
+    opacity: 0;
+  
+}
+
+.show > i:hover{
+    
+    color: #333333;
+    opacity: 1;
+
+  
+}
+#showR{
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%,-50%);
+   z-index: 900;
+}
+
+#showL{
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%,-50%);
+    
+    z-index: 900;
 }
 
 
-
 .show > img{
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
-    transition: opacity 0.5s,transform 0.5s;
     box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
-    opacity: 1;
+    opacity: 0;
+    transition: transform 0.5s;
 }
 
 .show > img:hover{
